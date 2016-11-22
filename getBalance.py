@@ -8,16 +8,24 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTCashbillService,PopbillException
+from popbill import HTCashbillService, PopbillException
 
-htCashbillService = HTCashbillService(testValue.LinkID,testValue.SecretKey)
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 
+'''
+연동회원의 잔여포인트를 확인합니다.
+- 과금방식이 파트너과금인 경우 파트너 잔여포인트(GetPartnerBalance API) 를 통해 확인하시기 바랍니다.
+'''
+
 try:
-    print("=" * 15 + "팝빌회원 잔여포인트 확인" + "=" * 15)
+    print("=" * 15 + " 연동회원 잔여포인트 확인 " + "=" * 15)
 
-    balance = htCashbillService.getBalance(testValue.testCorpNum)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
 
-    print("잔여포인트: %f" % balance)
+    balance = htCashbillService.getBalance(CorpNum)
+
+    print("잔여포인트 : %f" % balance)
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

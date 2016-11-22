@@ -8,21 +8,25 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTCashbillService,PopbillException
+from popbill import HTCashbillService, PopbillException
 
-htCashbillService =  HTCashbillService(testValue.LinkID,testValue.SecretKey)
+htCashbillService =  HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 
+'''
+검색조건을 사용하여 수집 결과 요약정보를 조회합니다.
+- 응답항목에 관한 정보는 "[홈택스 현금영수증 연계 API 연동매뉴얼]
+  > 3.3.2. Summary (수집 결과 요약정보 조회)" 을 참고하시기 바랍니다.
+'''
+
 try:
-    print("=" * 15 + "수집결과 요약정보 조회 " + "=" * 15)
-    '''
-        수집 결과에 대한 요약정보를 반환합니다.
-        count : 결과건수
-        supplyCostTotal : 공급가액 합계
-        taxTotal : 세액 합계
-        serviceFeeTotal : 봉사료 합계
-        amountTotal : 합계 금액
-    '''
+    print("=" * 15 + " 수집결과 요약정보 조회 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
     JobID = "016080114000000008"
@@ -33,7 +37,7 @@ try:
     # 거래용도 배열, P-소득공제용, C-지출증빙용
     TradeUsage = ["P", "C"]
 
-    response = htCashbillService.summary(testValue.testCorpNum, JobID, TradeType, TradeUsage, testValue.testUserID)
+    response = htCashbillService.summary(CorpNum, JobID, TradeType, TradeUsage, UserID)
 
     print("count (수집결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)

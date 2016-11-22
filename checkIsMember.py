@@ -8,17 +8,24 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTCashbillService,PopbillException
+from popbill import HTCashbillService, PopbillException
 
-htCashbillService =  HTCashbillService(testValue.LinkID,testValue.SecretKey)
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
+
+'''
+' 해당 사업자의 파트너 연동회원 가입여부를 확인합니다.
+'''
 
 try:
     print("=" * 15 + " 연동회원 가입여부 확인 " + "=" * 15)
 
-    result = htCashbillService.checkIsMember(testValue.testCorpNum)
+    # 조회할 사업자번호, '-' 제외 10자리
+    CorpNum = "1234567890"
 
-    print("가입여부 : [%d] %s" % (result.code,result.message) )
+    result = htCashbillService.checkIsMember(CorpNum)
+
+    print("가입여부 : [%d] %s" % (result.code,result.message))
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

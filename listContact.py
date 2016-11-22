@@ -8,26 +8,25 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTCashbillService,PopbillException
+from popbill import HTCashbillService, PopbillException
 
-htCashbillService =  HTCashbillService(testValue.LinkID,testValue.SecretKey)
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
+
+'''
+연동회원의 담당자 목록을 확인합니다.
+'''
 
 try:
     print("=" * 15 + " 담당자 목록 확인 " + "=" * 15)
 
-    ''' ContactInfo 구성
-                id                  (담당자 아이디)
-                personName          (담당자 성명)
-                email               (이메일)
-                hp                  (휴대폰번호)
-                fax                 (팩스번호)
-                tel                 (연락처)
-                regDT               (등록일시)
-                searchAllAllowYN    (조회권한, True-회사조회, False-개인조회)
-                mgrYN               (관리자 여부, True-관리자, False-사용자)
-    '''
-    response = htCashbillService.listContact(testValue.testCorpNum, testValue.testUserID)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    response = htCashbillService.listContact(CorpNum, UserID)
 
     for info in response :
         for key, value in info.__dict__.items():

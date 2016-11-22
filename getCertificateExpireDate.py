@@ -8,18 +8,24 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import HTCashbillService,PopbillException
+from popbill import HTCashbillService, PopbillException
 
-htCashbillService =  HTCashbillService(testValue.LinkID,testValue.SecretKey)
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
+
+'''
+등록된 홈택스 공인인증서의 만료일자를 확인합니다.
+'''
 
 try:
     print("=" * 15 + " 홈택스 공인인증서 만료일시 확인 " + "=" * 15)
-    '''
-        팝빌에 등록되어 있는 홈택스 공인인증서의 만료일시를 확인합니다.
-    '''
 
-    expireDate = htCashbillService.getCertificateExpireDate ( testValue.testCorpNum, testValue.testUserID )
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+    expireDate = htCashbillService.getCertificateExpireDate(CorpNum, UserID)
 
     print("공인인증서 만료일시 : %s" % expireDate)
 
