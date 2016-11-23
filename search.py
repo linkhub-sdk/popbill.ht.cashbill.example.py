@@ -10,7 +10,7 @@ import testValue
 
 from popbill import HTCashbillService, PopbillException
 
-htCashbillService =  HTCashbillService(testValue.LinkID, testValue.SecretKey)
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 
 '''
@@ -28,7 +28,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "016080114000000008"
+    JobID = "016112315000000004"
 
     # 문서형태 배열, N-일반 현금영수증, M-취소 현금영수증
     TradeType = ["N", "C"]

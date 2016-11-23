@@ -25,6 +25,7 @@ try:
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
+    
     expireDate = htCashbillService.getCertificateExpireDate(CorpNum, UserID)
 
     print("공인인증서 만료일시 : %s" % expireDate)

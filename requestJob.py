@@ -33,10 +33,10 @@ try:
     Type = "SELL"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20160701"
+    SDate = "20161001"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20160901"
+    EDate = "20161131"
 
     jobID = htCashbillService.requestJob(CorpNum, Type, SDate, EDate, UserID)
 

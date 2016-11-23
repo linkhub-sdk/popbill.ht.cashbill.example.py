@@ -10,7 +10,7 @@ import testValue
 
 from popbill import CorpInfo, HTCashbillService, PopbillException
 
-htCashbillService =  HTCashbillService(testValue.LinkID, testValue.SecretKey)
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 
 '''

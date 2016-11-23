@@ -29,7 +29,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob) 호출시 발급받은 작업아이디
-    jobID = "016080114000000008"
+    jobID = "016112315000000004"
 
     response = htCashbillService.getJobState(CorpNum, jobID, UserID)
 
