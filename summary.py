@@ -29,7 +29,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "016112315000000004"
+    JobID = "018101016000000002"
 
     # 문서형태 배열, N-일반 현금영수증, M-취소 현금영수증
     TradeType = ["N", "C"]
@@ -39,9 +39,9 @@ try:
 
     response = htCashbillService.summary(CorpNum, JobID, TradeType, TradeUsage, UserID)
 
-    print("count (수집결과 건수) : %s " % response.count)
+    print("count (수집 결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)
-    print("taxTotal (세액 합계) : %s " % response.taxTotal)
+    print("taxTotal (부가세 합계) : %s " % response.taxTotal)
     print("serviceFeeTotal (봉사료 합계) : %s " % response.serviceFeeTotal)
     print("amountTotal (합계 금액) : %s " % response.amountTotal)
 
