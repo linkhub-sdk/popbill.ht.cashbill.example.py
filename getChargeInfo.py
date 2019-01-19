@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -14,7 +17,7 @@ htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 
 '''
-연동회원의 홈택스 현금영수증 연계 API 서비스 과금정보를 확인합니다.
+연동회원의 홈택스 현금영수증 API 연동서비스 과금정보를 확인합니다.
 '''
 
 try:
@@ -33,4 +36,4 @@ try:
     print("rateSystem(과금제도) : %s" % response.rateSystem)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

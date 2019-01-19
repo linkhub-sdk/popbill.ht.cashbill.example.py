@@ -15,7 +15,7 @@ htCashbillService.IsTest = testValue.IsTest
 
 '''
 검색조건을 사용하여 수집결과를 조회합니다.
-- 응답항목에 관한 정보는 "[홈택스 현금영수증 연계 API 연동매뉴얼]
+- 응답항목에 관한 정보는 "[홈택스연동(현금영수증) API 연동매뉴얼]
   > 3.3.1. Search (수집 결과 조회)" 을 참고하시기 바랍니다.
 '''
 try:
@@ -28,7 +28,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "016112315000000004"
+    JobID = "019011915000000001"
 
     # 문서형태 배열, N-일반 현금영수증, M-취소 현금영수증
     TradeType = ["N", "C"]

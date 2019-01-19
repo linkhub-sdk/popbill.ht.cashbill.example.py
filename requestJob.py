@@ -15,8 +15,8 @@ htCashbillService.IsTest = testValue.IsTest
 
 '''
 현금영수증 매출/매입 내역 수집을 요청합니다
-- 매출/매입 연계 프로세스는 "[홈택스 현금영수증 연계 API 연동매뉴얼]
-  > 1.2. 프로세스 흐름도" 를 참고하시기 바랍니다.
+- 매출/매입 연계 프로세스는 "[홈택스연동(현금영수증) API 연동매뉴얼]
+  > 1.1. 홈택스연동(현금영수증) API 구성"  참고하시기 바랍니다.
 - 수집 요청후 반환받은 작업아이디(JobID)의 유효시간은 1시간 입니다.
 '''
 
@@ -33,10 +33,10 @@ try:
     Type = "SELL"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20161001"
+    SDate = "20180601"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20161131"
+    EDate = "20190119"
 
     jobID = htCashbillService.requestJob(CorpNum, Type, SDate, EDate, UserID)
 

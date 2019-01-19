@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -15,8 +18,8 @@ htCashbillService.IsTest = testValue.IsTest
 
 '''
 수집 요청 상태를 확인합니다.
-- 응답항목 관한 정보는 "[홈택스 현금영수증 연계 API 연동매뉴얼
-  > 3.2.2. GetJobState (수집 상태 확인)" 을 참고하시기 바랍니다.
+- 응답항목 관한 정보는 "[홈택스연동(현금영수증) API 연동매뉴얼]
+  > 3.1.2. GetJobState (수집 상태 확인)" 을 참고하시기 바랍니다.
 '''
 
 try:
@@ -37,4 +40,4 @@ try:
         print("%s : %s" % (key, value))
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

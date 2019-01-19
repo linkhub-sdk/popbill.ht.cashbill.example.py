@@ -24,7 +24,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # CHRG : 포인트충전 URL
+    # CHRG-포인트 충전 URL
     TOGO = "CHRG"
 
     url = htCashbillService.getPartnerURL(CorpNum, TOGO)

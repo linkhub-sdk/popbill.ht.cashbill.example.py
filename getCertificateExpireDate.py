@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -25,10 +28,10 @@ try:
 
     # 팝빌회원 아이디
     UserID = testValue.testUserID
-    
+
     expireDate = htCashbillService.getCertificateExpireDate(CorpNum, UserID)
 
     print("공인인증서 만료일시 : %s" % expireDate)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
