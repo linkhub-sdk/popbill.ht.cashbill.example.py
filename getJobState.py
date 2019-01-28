@@ -32,12 +32,21 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob) 호출시 발급받은 작업아이디
-    jobID = "016112315000000004"
+    jobID = "019012817000000002"
 
     response = htCashbillService.getJobState(CorpNum, jobID, UserID)
 
-    for key, value in response.__dict__.items():
-        print("%s : %s" % (key, value))
+    print("jobState (수집상태) : %s" % response.jobState)
+    print("queryType (수집유형) : %s" % response.queryType)
+    print("queryDateType (일자유형) : %s" % response.queryDateType)
+    print("queryStDate (시작일자) : %s" % response.queryStDate)
+    print("queryEnDate (종료일자) : %s" % response.queryEnDate)
+    print("errorCode (오류코드) : %s" % response.errorCode)
+    print("errorReason (오류메시지) : %s" % response.errorReason)
+    print("jobStartDT (작업 시작일시) : %s" % response.jobStartDT)
+    print("jobEndDT (작업 종료일시) : %s" % response.jobEndDT)
+    print("collectCount (수집개수) : %s" % response.collectCount)
+    print("regDT (수집 요청일시) : %s" % response.regDT)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

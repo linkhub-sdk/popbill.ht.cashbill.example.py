@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -16,7 +19,7 @@ htCashbillService.IsTest = testValue.IsTest
 '''
 검색조건을 사용하여 수집결과를 조회합니다.
 - 응답항목에 관한 정보는 "[홈택스연동(현금영수증) API 연동매뉴얼]
-  > 3.3.1. Search (수집 결과 조회)" 을 참고하시기 바랍니다.
+  > 3.2.1. Search (수집 결과 조회)" 을 참고하시기 바랍니다.
 '''
 try:
     print("=" * 15 + " 홈택스 매출/매입 조회 " + "=" * 15)
@@ -28,7 +31,7 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "019011915000000001"
+    JobID = "019012817000000002"
 
     # 문서형태 배열, N-일반 현금영수증, M-취소 현금영수증
     TradeType = ["N", "C"]
@@ -46,7 +49,7 @@ try:
     Order = "D"
 
     response = htCashbillService.search(CorpNum, JobID, TradeType, TradeUsage,
-        Page, PerPage, Order, UserID)
+                                        Page, PerPage, Order, UserID)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -55,14 +58,24 @@ try:
     print("pageNum (페에지 번호) : %s " % response.pageNum)
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
-    i = 1
-    for info in response.list :
-        print("====== 현금영수증 정보 [%d] ======"% i)
-        for key, value in info.__dict__.items():
-            print("%s : %s" % (key, value))
-        i += 1
-        print("")
-
-
+    for info in response.list:
+        print("ntsconfirmNum (국세청승인번호) : " + str(info.ntsconfirmNum))
+        print("tradeDate (거래일자) : " + str(info.tradeDate))
+        print("tradeDT (거래일시) : " + str(info.tradeDT))
+        print("tradeUsage (거래유형) : " + str(info.tradeUsage))
+        print("tradeType (현금영수증 형태) : " + str(info.tradeType))
+        print("supplyCost (공급가액) : " + str(info.supplyCost))
+        print("tax (부가세) : " + str(info.tax))
+        print("serviceFee (봉사료) : " + str(info.serviceFee))
+        print("totalAmount (거래금액) : " + str(info.totalAmount))
+        print("invoiceType (매입/매출) : " + str(info.invoiceType))
+        print("franchiseCorpNum (발행자 사업자번호) : " + str(info.franchiseCorpNum))
+        print("franchiseCorpName (발행자 상호) : " + str(info.franchiseCorpName))
+        print("franchiseCorpType (발행자 사업자유형) : " + str(info.franchiseCorpType))
+        print("identityNum (거래처 식별번호) : " + str(info.identityNum))
+        print("identityNumType (식별번호유형) : " + str(info.identityNumType))
+        print("customerName (고객명) : " + str(info.customerName))
+        print("cardOwnerName (카드소유자명) : " + str(info.cardOwnerName))
+        print("deductionType (공제유형) : " + str(info.deductionType) + '\n')
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
