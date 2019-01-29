@@ -31,12 +31,12 @@ try:
     UserID = testValue.testUserID
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "019012817000000002"
+    JobID = "019012912000000001"
 
-    # 문서형태 배열, N-일반 현금영수증, M-취소 현금영수증
+    # 문서형태 배열, N-일반 현금영수증, C-취소 현금영수증
     TradeType = ["N", "C"]
 
-    # 거래용도 배열, P-소득공제용, C-지출증빙용
+    # 거래구분 배열, P-소득공제용, C-지출증빙용
     TradeUsage = ["P", "C"]
 
     # 페이지번호
@@ -59,6 +59,7 @@ try:
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
     for info in response.list:
+        print("\n=======현금영수증 정보=======>")
         print("ntsconfirmNum (국세청승인번호) : %s " % info.ntsconfirmNum)
         print("tradeDate (거래일자) : %s " % info.tradeDate)
         print("tradeDT (거래일시) : %s " % info.tradeDT)
@@ -69,9 +70,13 @@ try:
         print("serviceFee (봉사료) : %s " % info.serviceFee)
         print("totalAmount (거래금액) : %s " % info.totalAmount)
         print("invoiceType (매입/매출) : %s " % info.invoiceType)
+
+        print("\n발행자 정보>")
         print("franchiseCorpNum (발행자 사업자번호) : %s " % info.franchiseCorpNum)
         print("franchiseCorpName (발행자 상호) : %s " % info.franchiseCorpName)
         print("franchiseCorpType (발행자 사업자유형) : %s " % info.franchiseCorpType)
+
+        print("\n거래처 정보>")
         print("identityNum (거래처 식별번호) : %s " % info.identityNum)
         print("identityNumType (식별번호유형) : %s " % info.identityNumType)
         print("customerName (고객명) : %s " % info.customerName)
