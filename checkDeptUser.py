@@ -15,6 +15,7 @@ from popbill import HTCashbillService, PopbillException
 
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
+htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 팝빌에 등록된 현금영수증 부서사용자 아이디를 확인합니다.

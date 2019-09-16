@@ -15,6 +15,7 @@ from popbill import HTCashbillService, PopbillException
 
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
+htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 정액제 신청 팝업 URL을 반환합니다.

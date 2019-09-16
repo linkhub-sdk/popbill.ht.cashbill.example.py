@@ -15,6 +15,7 @@ from popbill import HTCashbillService, PopbillException
 
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
+htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 홈택스 현금영수증 부서사용자 계정을 등록합니다.

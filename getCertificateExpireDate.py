@@ -15,6 +15,7 @@ from popbill import HTCashbillService, PopbillException
 
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
+htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 등록된 홈택스 공인인증서의 만료일자를 확인합니다.
