@@ -19,6 +19,7 @@ htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 등록된 홈택스 공인인증서의 만료일자를 확인합니다.
+- https://docs.popbill.com/htcashbill/python/api#GetCertificateExpireDate
 '''
 
 try:

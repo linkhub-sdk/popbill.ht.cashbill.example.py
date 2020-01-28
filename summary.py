@@ -19,8 +19,7 @@ htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 검색조건을 사용하여 수집 결과 요약정보를 조회합니다.
-- 응답항목에 관한 정보는 "[홈택스연동(현금영수증) API 연동매뉴얼]
-  > 3.2.2. Summary (수집 결과 요약정보 조회)" 을 참고하시기 바랍니다.
+- https://docs.popbill.com/htcashbill/python/api#Summary
 '''
 
 try:

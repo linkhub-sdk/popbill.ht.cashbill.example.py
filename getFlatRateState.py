@@ -19,6 +19,7 @@ htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 연동회원의 정액제 서비스 이용상태를 확인합니다.
+- https://docs.popbill.com/htcashbill/python/api#GetFlatRateState
 '''
 
 try:

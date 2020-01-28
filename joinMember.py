@@ -19,6 +19,7 @@ htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 팝빌 연동회원 가입을 요청합니다.
+- https://docs.popbill.com/htcashbill/python/api#JoinMember
 '''
 
 try:
