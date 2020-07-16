@@ -16,6 +16,7 @@ from popbill import HTCashbillService, PopbillException
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htCashbillService.UseStaticIP = testValue.UseStaticIP
 
 '''
 팝빌 회원아이디 중복여부를 확인합니다.

@@ -16,6 +16,7 @@ from popbill import ContactInfo, HTCashbillService, PopbillException
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htCashbillService.UseStaticIP = testValue.UseStaticIP
 
 '''
 연동회원의 담당자를 신규로 등록합니다.

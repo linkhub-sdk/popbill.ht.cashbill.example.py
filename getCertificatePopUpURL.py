@@ -16,6 +16,7 @@ from popbill import HTCashbillService, PopbillException
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htCashbillService.UseStaticIP = testValue.UseStaticIP
 
 '''
 홈택스연동 인증관리를 위한 URL을 반환합니다.

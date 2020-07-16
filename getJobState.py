@@ -16,6 +16,7 @@ from popbill import HTCashbillService, PopbillException
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htCashbillService.UseStaticIP = testValue.UseStaticIP
 
 '''
 수집 요청 상태를 확인합니다.

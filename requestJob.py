@@ -13,6 +13,7 @@ from popbill import HTCashbillService, PopbillException
 htCashbillService =  HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htCashbillService.UseStaticIP = testValue.UseStaticIP
 
 '''
 현금영수증 매출/매입 내역 수집을 요청합니다

@@ -16,6 +16,7 @@ from popbill import HTCashbillService, PopbillException
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htCashbillService.UseStaticIP = testValue.UseStaticIP
 
 '''
 파트너의 잔여포인트를 확인합니다.
