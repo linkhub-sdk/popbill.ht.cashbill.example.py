@@ -14,6 +14,7 @@ htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htCashbillService.UseStaticIP = testValue.UseStaticIP
+htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 파트너 포인트충전 팝업 URL을 반환합니다.

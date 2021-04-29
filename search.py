@@ -17,6 +17,7 @@ htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htCashbillService.UseStaticIP = testValue.UseStaticIP
+htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 검색조건을 사용하여 수집결과를 조회합니다.
@@ -82,6 +83,6 @@ try:
         print("identityNumType (식별번호유형) : %s " % info.identityNumType)
         print("customerName (고객명) : %s " % info.customerName)
         print("cardOwnerName (카드소유자명) : %s " % info.cardOwnerName)
-        print("deductionType (공제유형) : %s " % info.deductionType) + '\n'
+        print("deductionType (공제유형) : %s " % info.deductionType  + '\n')
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

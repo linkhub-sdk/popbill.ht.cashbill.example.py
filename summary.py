@@ -17,6 +17,7 @@ htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htCashbillService.UseStaticIP = testValue.UseStaticIP
+htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 검색조건을 사용하여 수집 결과 요약정보를 조회합니다.
