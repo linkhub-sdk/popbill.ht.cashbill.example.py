@@ -17,8 +17,7 @@ htCashbillService.UseStaticIP = testValue.UseStaticIP
 htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-현금영수증 매출/매입 내역 수집을 요청합니다 .(조회기간 단위 : 최대 3개월)
-- 수집 요청후 반환받은 작업아이디(JobID)의 유효시간은 1시간 입니다.
+홈택스에 신고된 현금영수증 매입/매출 내역 수집을 팝빌에 요청합니다. (조회기간 단위 : 최대 3개월)
 - https://docs.popbill.com/htcashbill/python/api#RequestJob
 '''
 
@@ -35,10 +34,10 @@ try:
     Type = "SELL"
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20211201"
+    SDate = "20220701"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20211230"
+    EDate = "20220731"
 
     jobID = htCashbillService.requestJob(CorpNum, Type, SDate, EDate, UserID)
 

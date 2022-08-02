@@ -36,10 +36,14 @@ try:
     # 수집요청(requestJob)시 발급받은 작업아이디
     JobID = "019011915000000001"
 
-    # 문서형태 배열, N-일반 현금영수증, C-취소 현금영수증
+    # 문서형태 배열 ("N" 와 "C" 중 선택, 다중 선택 가능)
+    # └ N = 일반 현금영수증 , C = 취소현금영수증
+    # - 미입력 시 전체조회
     TradeType = ["N", "C"]
 
-    # 거래구분 배열, P-소득공제용, C-지출증빙용
+    # 거래구분 배열 ("P" 와 "C" 중 선택, 다중 선택 가능)
+    # └ P = 소득공제용 , C = 지출증빙용
+    # - 미입력 시 전체조회
     TradeUsage = ["P", "C"]
 
     response = htCashbillService.summary(CorpNum, JobID, TradeType, TradeUsage, UserID)

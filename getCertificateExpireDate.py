@@ -20,7 +20,7 @@ htCashbillService.UseStaticIP = testValue.UseStaticIP
 htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-등록된 홈택스 공인인증서의 만료일자를 확인합니다.
+팝빌에 등록된 홈택스 공인인증서의 만료일자를 확인합니다.
 - https://docs.popbill.com/htcashbill/python/api#GetCertificateExpireDate
 '''
 

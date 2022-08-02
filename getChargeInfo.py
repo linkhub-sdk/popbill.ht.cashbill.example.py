@@ -20,7 +20,7 @@ htCashbillService.UseStaticIP = testValue.UseStaticIP
 htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-연동회원의 홈택스 현금영수증 API 연동서비스 과금정보를 확인합니다.
+팝빌 홈택스연동(현금) API 서비스 과금정보를 확인합니다.
 - https://docs.popbill.com/htcashbill/python/api#GetChargeInfo
 '''
 
