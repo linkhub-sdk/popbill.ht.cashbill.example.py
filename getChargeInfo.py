@@ -30,10 +30,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
-    response = htCashbillService.getChargeInfo(CorpNum, UserID)
+    response = htCashbillService.getChargeInfo(CorpNum)
 
     print("unitCost(월정액요금) : %s" % response.unitCost)
     print("chargeMethod(과금유형) : %s" % response.chargeMethod)

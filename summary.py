@@ -30,9 +30,6 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 수집요청(requestJob)시 발급받은 작업아이디
     JobID = "019011915000000001"
 
@@ -46,7 +43,7 @@ try:
     # - 미입력 시 전체조회
     TradeUsage = ["P", "C"]
 
-    response = htCashbillService.summary(CorpNum, JobID, TradeType, TradeUsage, UserID)
+    response = htCashbillService.summary(CorpNum, JobID, TradeType, TradeUsage)
 
     print("count (수집 결과 건수) : %s " % response.count)
     print("supplyCostTotal (공급가액 합계) : %s " % response.supplyCostTotal)

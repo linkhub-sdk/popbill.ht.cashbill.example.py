@@ -29,9 +29,6 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 수집요청(requestJob)시 발급받은 작업아이디
     JobID = "019012912000000001"
 
@@ -55,7 +52,7 @@ try:
     Order = "D"
 
     response = htCashbillService.search(CorpNum, JobID, TradeType, TradeUsage,
-                                        Page, PerPage, Order, UserID)
+                                        Page, PerPage, Order)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
