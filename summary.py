@@ -31,7 +31,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 수집요청(requestJob)시 발급받은 작업아이디
-    JobID = "019011915000000001"
+    JobID = "022080216000000004"
 
     # 문서형태 배열 ("N" 와 "C" 중 선택, 다중 선택 가능)
     # └ N = 일반 현금영수증 , C = 취소현금영수증
