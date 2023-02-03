@@ -21,7 +21,7 @@ htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 홈택스연동 정액제 서비스 상태를 확인합니다.
-- https://docs.popbill.com/htcashbill/python/api#GetFlatRateState
+- https://developers.popbill.com/reference/htcashbill/python/api/point#GetFlatRateState
 '''
 
 try:
