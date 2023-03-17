@@ -46,7 +46,7 @@ try:
     Order	= "D"
 
     # 팝빌회원 팝빌 아이디
-    UserID = testValue.UserID
+    UserID = testValue.testUserID
 
     useHistoryResult = htCashbillService.getUseHistory(CorpNum, SDate,EDate,Page,PerPage,Order, UserID)
 

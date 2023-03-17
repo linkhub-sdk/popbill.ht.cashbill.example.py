@@ -37,7 +37,7 @@ try:
     PerPage = 500
 
     # 팝빌회원 팝빌 아이디
-    UserID = testValue.UserID
+    UserID = testValue.testUserID
 
     refundHistoryResult = htCashbillService.getRefundHistory(CorpNum, Page, PerPage, UserID)
 

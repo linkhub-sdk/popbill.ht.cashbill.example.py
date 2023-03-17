@@ -43,7 +43,7 @@ try:
     PerPage	= 500
 
     # 팝빌회원 팝빌 아이디
-    UserID = testValue.UserID
+    UserID = testValue.testUserID
 
     paymentHistoryResult = htCashbillService.getPaymentHistory(CorpNum, SDate,EDate,Page,PerPage, UserID)
 

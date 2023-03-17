@@ -40,7 +40,7 @@ try:
     )
 
     # 팝빌회원 팝빌 아이디
-    UserID = testValue.UserID
+    UserID = testValue.testUserID
 
     paymentResponse = htCashbillService.getPaymentHistory(CorpNum, paymentForm, UserID)
 
