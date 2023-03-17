@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htCashbillService.UseStaticIP = testValue.UseStaticIP
 htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 팝빌에 등록된 현금영수증 부서사용자 계정정보를 삭제합니다.
 - https://developers.popbill.com/reference/htcashbill/python/api/cert#DeleteDeptUser
-'''
+"""
 
 try:
     print("=" * 15 + " 부서사용자 등록정보 삭제 " + "=" * 15)

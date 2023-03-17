@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htCashbillService.UseStaticIP = testValue.UseStaticIP
 htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 수집 상태 확인(GetJobState API) 함수를 통해 상태 정보 확인된 작업아이디를 활용하여 현금영수증 매입/매출 내역을 조회합니다.
 - https://developers.popbill.com/reference/htcashbill/python/api/search#Search
-'''
+"""
 try:
     print("=" * 15 + " 홈택스 매출/매입 조회 " + "=" * 15)
 
@@ -51,8 +51,9 @@ try:
     # 정렬방향 D-내림차순, A-오름차순
     Order = "D"
 
-    response = htCashbillService.search(CorpNum, JobID, TradeType, TradeUsage,
-                                        Page, PerPage, Order)
+    response = htCashbillService.search(
+        CorpNum, JobID, TradeType, TradeUsage, Page, PerPage, Order
+    )
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -84,6 +85,6 @@ try:
         print("identityNumType (식별번호유형) : %s " % info.identityNumType)
         print("customerName (고객명) : %s " % info.customerName)
         print("cardOwnerName (카드소유자명) : %s " % info.cardOwnerName)
-        print("deductionType (공제유형) : %s " % info.deductionType  + '\n')
+        print("deductionType (공제유형) : %s " % info.deductionType + "\n")
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

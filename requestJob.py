@@ -2,24 +2,27 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding("UTF8")
+except Exception as E:
+    pass
 
 import testValue
 
 from popbill import HTCashbillService, PopbillException
 
-htCashbillService =  HTCashbillService(testValue.LinkID, testValue.SecretKey)
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
 htCashbillService.IsTest = testValue.IsTest
 htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
 htCashbillService.UseStaticIP = testValue.UseStaticIP
 htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 홈택스에 신고된 현금영수증 매입/매출 내역 수집을 팝빌에 요청합니다. (조회기간 단위 : 최대 3개월)
 - https://developers.popbill.com/reference/htcashbill/python/api/job#RequestJob
-'''
+"""
 
 try:
     print("=" * 15 + " 수집 요청 " + "=" * 15)
@@ -38,7 +41,7 @@ try:
 
     jobID = htCashbillService.requestJob(CorpNum, Type, SDate, EDate)
 
-    print( "작업아이디(jobID) : " + jobID)
+    print("작업아이디(jobID) : " + jobID)
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))
