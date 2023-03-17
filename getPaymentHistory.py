@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # code for console Encoding difference. Dont' mind on it
-import sys
 import imp
+import sys
 
 imp.reload(sys)
 try:
@@ -10,7 +10,6 @@ except Exception as E:
     pass
 
 import testValue
-
 from popbill import HTCashbillService, PopbillException
 
 htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
@@ -46,7 +45,18 @@ try:
     UserID = testValue.testUserID
 
     paymentHistoryResult = htCashbillService.getPaymentHistory(
-        CorpNum, SDate, EDate, Page, PerPage, UserID
+        # 팝빌회원 사업자번호
+        CorpNum,
+        #   조회 기간의 시작일자
+        SDate,
+        #  조회 기간의 종료일자
+        EDate,
+        #  목록 페이지번호
+        Page,
+        #  페이지당 표시할 목록 개수
+        PerPage,
+        # 팝빌회원 아이디
+        UserID,
     )
 
     print(" code (요청에 대한 응답 상태 코드) : %s" % paymentHistoryResult.code)
@@ -56,16 +66,16 @@ try:
     print(" pageCount (페이지 개수) : %s" % paymentHistoryResult.rateSystem)
 
     for paymentHistory in paymentHistoryResult:
-        print(" 결제 내용 : '포인트' / '정액제' / '미수금' 중 반환 %s" % paymentHistory.productType)
-        print(" 정액제 상품명 %s" % paymentHistory.productName)
-        print(" 결제유형 : '무통장' / '신용카드' / '실시간계좌이체' 중 반환 %s" % paymentHistory.settleType)
-        print(" 담당자명 %s" % paymentHistory.settlerName)
-        print(" 담당자메일 %s" % paymentHistory.settlerEmail)
-        print(" 결제금액 %s" % paymentHistory.settleCost)
-        print(" 충전포인트 %s" % paymentHistory.settlePoint)
-        print(" 결제상태 : 1 / 2 / 3 / 4 / 5 중 반환 %s" % paymentHistory.settleState)
-        print(" 등록일시 (형식 : yyyyMMddHHmmss) %s" % paymentHistory.regDT)
-        print(" 상태일시 (형식 : yyyyMMddHHmmss) %s" % paymentHistory.stateDT)
+        print(" productType (결제 내용) : %s" % paymentHistory.productType)
+        print(" productName (정액제 상품명) : %s" % paymentHistory.productName)
+        print(" settleType (결제유형) : %s" % paymentHistory.settleType)
+        print(" settlerName (담당자명) : %s" % paymentHistory.settlerName)
+        print(" settlerEmail (담당자메일) : %s" % paymentHistory.settlerEmail)
+        print(" settleCost (결제금액) : %s" % paymentHistory.settleCost)
+        print(" settlePoint (충전포인트) : %s" % paymentHistory.settlePoint)
+        print(" settleState (결제상태) : %s" % paymentHistory.settleState)
+        print(" regDT (등록일시) : %s" % paymentHistory.regDT)
+        print(" stateDT (상태일시) : %s" % paymentHistory.stateDT)
         print("*" * 50)
 
 
