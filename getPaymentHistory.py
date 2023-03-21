@@ -33,7 +33,7 @@ try:
     SDate = "20230101"
 
     # 조회 기간의 종료일자 (형식 : yyyyMMdd)
-    EDate = "20230107"
+    EDate = "20230131"
 
     # 목록 페이지번호 (기본값 1)
     Page = 1
@@ -60,12 +60,12 @@ try:
     )
 
     print(" code (요청에 대한 응답 상태 코드) : %s" % paymentHistoryResult.code)
-    print(" total (총 검색결과 건수) : %s" % paymentHistoryResult.chargeMethod)
-    print(" perPage (페이지당 검색 개수) : %s" % paymentHistoryResult.chargeMethod)
-    print(" pageNum (페이지 번호) : %s" % paymentHistoryResult.chargeMethod)
-    print(" pageCount (페이지 개수) : %s" % paymentHistoryResult.rateSystem)
+    print(" total (총 검색결과 건수) : %s" % paymentHistoryResult.total)
+    print(" perPage (페이지당 검색 개수) : %s" % paymentHistoryResult.perPage)
+    print(" pageNum (페이지 번호) : %s" % paymentHistoryResult.pageNum)
+    print(" pageCount (페이지 개수) : %s" % paymentHistoryResult.pageCount)
 
-    for paymentHistory in paymentHistoryResult:
+    for paymentHistory in paymentHistoryResult.list:
         print(" productType (결제 내용) : %s" % paymentHistory.productType)
         print(" productName (정액제 상품명) : %s" % paymentHistory.productName)
         print(" settleType (결제유형) : %s" % paymentHistory.settleType)
