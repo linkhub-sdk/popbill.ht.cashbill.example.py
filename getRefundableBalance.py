@@ -10,13 +10,13 @@ except Exception as E:
     pass
 
 import testValue
-from popbill import AccountCheckService, PopbillException
+from popbill import HTCashbillService, PopbillException
 
-accountCheckService = AccountCheckService(testValue.LinkID, testValue.SecretKey)
-accountCheckService.IsTest = testValue.IsTest
-accountCheckService.IPRestrictOnOff = testValue.IPRestrictOnOff
-accountCheckService.UseStaticIP = testValue.UseStaticIP
-accountCheckService.UseLocalTimeYN = testValue.UseLocalTimeYN
+htCashbillService = HTCashbillService(testValue.LinkID, testValue.SecretKey)
+htCashbillService.IsTest = testValue.IsTest
+htCashbillService.IPRestrictOnOff = testValue.IPRestrictOnOff
+htCashbillService.UseStaticIP = testValue.UseStaticIP
+htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 환불 가능한 포인트를 확인합니다. (보너스 포인트는 환불가능포인트에서 제외됩니다.)
@@ -32,7 +32,7 @@ try:
     # 팝빌회원 팝빌 아이디
     UserID = testValue.testUserID
 
-    refundableBalance = AccountCheckService.getRefundableBalance(CorpNum, UserID)
+    refundableBalance = htCashbillService.getRefundableBalance(CorpNum, UserID)
 
     print(" refundableBalance (환불 가능한 포인트) : %s" % refundableBalance)
 
