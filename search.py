@@ -50,14 +50,13 @@ try:
     # 정렬방향 D-내림차순, A-오름차순
     Order = "D"
 
-    response = htCashbillService.search(
-        CorpNum, JobID, TradeType, TradeUsage, Page, PerPage, Order
-    )
+    response = htCashbillService.search(CorpNum, JobID, TradeType, TradeUsage,
+        Page, PerPage, Order)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
     print("total (검색결과 건수) : %s " % response.total)
-    print("perPage (페이지당 검색개수) : %s " % response.perPage)
+    print("perPage (페이지당 목록건수) : %s " % response.perPage)
     print("pageNum (페에지 번호) : %s " % response.pageNum)
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
@@ -66,24 +65,24 @@ try:
         print("ntsconfirmNum (국세청승인번호) : %s " % info.ntsconfirmNum)
         print("tradeDate (거래일자) : %s " % info.tradeDate)
         print("tradeDT (거래일시) : %s " % info.tradeDT)
-        print("tradeUsage (거래유형) : %s " % info.tradeUsage)
-        print("tradeType (현금영수증 형태) : %s " % info.tradeType)
+        print("tradeType (문서형태) : %s " % info.tradeType)
+        print("tradeUsage (거래구분) : %s " % info.tradeUsage)
+
+        print("totalAmount (거래금액) : %s " % info.totalAmount)
         print("supplyCost (공급가액) : %s " % info.supplyCost)
         print("tax (부가세) : %s " % info.tax)
         print("serviceFee (봉사료) : %s " % info.serviceFee)
-        print("totalAmount (거래금액) : %s " % info.totalAmount)
-        print("invoiceType (매입/매출) : %s " % info.invoiceType)
+        print("invoiceType (현금영수증 유형) : %s " % info.invoiceType)
 
-        print("\n발행자 정보>")
-        print("franchiseCorpNum (발행자 사업자번호) : %s " % info.franchiseCorpNum)
-        print("franchiseCorpName (발행자 상호) : %s " % info.franchiseCorpName)
-        print("franchiseCorpType (발행자 사업자유형) : %s " % info.franchiseCorpType)
+        print("franchiseCorpNum (가맹점 사업자번호) : %s " % info.franchiseCorpNum)
+        print("franchiseCorpName (가맹점 상호) : %s " % info.franchiseCorpName)
+        print("franchiseCorpType (가맹점 사업자유형) : %s " % info.franchiseCorpType)
 
-        print("\n거래처 정보>")
-        print("identityNum (거래처 식별번호) : %s " % info.identityNum)
-        print("identityNumType (식별번호유형) : %s " % info.identityNumType)
-        print("customerName (고객명) : %s " % info.customerName)
+        print("identityNum (식별번호) : %s " % info.identityNum)
+        print("identityNumType (식별번호 유형) : %s " % info.identityNumType)
+        print("customerName (구매자 성명) : %s " % info.customerName)
         print("cardOwnerName (카드소유자명) : %s " % info.cardOwnerName)
         print("deductionType (공제유형) : %s " % info.deductionType + "\n")
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

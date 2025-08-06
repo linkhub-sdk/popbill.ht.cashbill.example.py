@@ -20,7 +20,7 @@ htCashbillService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 연동회원의 잔여포인트를 확인합니다.
-- https://developers.popbill.com/reference/htcashbill/python/api/point#GetBalance
+- https://developers.popbill.com/reference/htcashbill/python/common-api/point#GetBalance
 """
 
 try:
